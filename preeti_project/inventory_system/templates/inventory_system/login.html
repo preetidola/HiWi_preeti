@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>Log in</title>
+</head>
+
+{% block main %}
+<body>
+   <form style="text-align:center;" action="{% url 'login' %}" method="POST">
+   {% csrf_token %}
+   <table>
+    <tr>
+        <td>Email:</td>
+        <td>{{ form.uid }}</td>
+    </tr>
+    <tr>
+        <td>Password:</td>
+        <td>{{ form.pwd }}</td>
+    </tr>
+    <tr>
+           <td></td>
+           <td><input type="submit" value="Login"/></td>
+     </tr>
+     </table>
+    </form>
+    {{ form.errors }}
+</body>
+{% endblock main %}
+</html>
